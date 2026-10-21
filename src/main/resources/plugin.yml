@@ -1,0 +1,13 @@
+name: MapReset
+version: 1.0.0
+main: dev.mapreset.MapResetPlugin
+api-version: '1.21'
+description: Gradually resets random chunks of the map back to freshly generated terrain.
+commands:
+  mapreset:
+    description: Trigger a reset right now
+    usage: /mapreset now
+    permission: mapreset.admin
+permissions:
+  mapreset.admin:
+    default: op

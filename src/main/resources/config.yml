@@ -1,0 +1,34 @@
+# World to reset (the main overworld is usually "world")
+world: world
+
+# Name of the hidden helper world used as the "fresh terrain" source.
+# It uses the same seed as the main world. You can delete its folder any time.
+template-world: reset_template
+
+# How often a reset happens (minutes of server uptime)
+interval-minutes: 15
+
+# How many chunks are reset each time (1 chunk = 16x16 blocks, full height)
+chunks-per-reset: 1
+
+# Chunks are chosen randomly within this many chunks of world spawn
+radius-chunks: 64
+
+# Never reset chunks this close to world spawn (in chunks)
+spawn-protection-chunks: 10
+
+# Skip chunks within this many chunks of any online player.
+# This is also the radius around each player that counts as "visited".
+skip-if-player-within-chunks: 6
+
+# A chunk is only reset if no player has been near it for this many minutes.
+# Also acts as a warm-up after server start (nothing resets until it has passed),
+# so chunks visited just before the server last stopped are safe too.
+player-cooldown-minutes: 10
+
+# How many vertical layers are processed per tick (lower = less lag, slower reset)
+layers-per-tick: 8
+
+# Protected areas in BLOCK coordinates: "x1,z1,x2,z2"
+protected-areas:
+  - "-100,-100,100,100"
